@@ -246,6 +246,28 @@ section h2 { font-size: 1.7rem; margin: 0 0 22px; }
 .orders-table th, .orders-table td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
 .orders-table th { background: #f4efe4; }
 
+/* Excel-style sheet in the admin panel */
+.sheet { border: 1.5px solid #1d7044; border-radius: 10px; overflow: hidden; background: #fff; margin-top: 10px; }
+.sheet-titlebar {
+  background: #1d7044; color: #fff; font-weight: 800; padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.sheet-icon { font-size: 1.1rem; }
+.sheet-hint { font-weight: 500; font-size: 0.85rem; opacity: 0.85; }
+.sheet-table th {
+  background: #217346; color: #fff; border-color: #185c37; font-size: 0.88rem;
+  position: sticky; top: 0; white-space: nowrap;
+}
+.sheet-table td { border-color: #d6dde3; padding: 7px 10px; white-space: nowrap; }
+.sheet-table tbody tr:nth-child(even) td { background: #f6faf7; }
+.sheet-table td.rownum, .sheet-table th.rownum-head {
+  background: #eef1f3; color: #5f6b73; text-align: center; font-weight: 700;
+  width: 44px; border-color: #d6dde3;
+}
+.sheet-table th.rownum-head { background: #dde3e7; }
+.sheet-table .blank-row td { height: 31px; background: #fff; }
+.sheet-empty-note { margin: 0; padding: 12px 14px; color: var(--muted); font-size: 0.92rem; border-top: 1px solid #d6dde3; }
+
 @media (max-width: 760px) {
   .hero { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2rem; }
