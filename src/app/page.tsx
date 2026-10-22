@@ -42,8 +42,8 @@ export default function Home() {
     <>
       <a href="#order" className="skip-link">Skip to order form</a>
       <div className="topbar">
-        <span className="brand">NoorCare Pharmacy</span>
-        <span className="topbar-offer">Free delivery · Cash on delivery</span>
+        <span className="brand"><span className="brand-cross">+</span> NoorCare Pharmacy</span>
+        <span className="free-badge">FREE DELIVERY</span>
       </div>
 
       <main>
@@ -61,7 +61,10 @@ export default function Home() {
               <span className="price-now">SAR 119</span>
               <span className="price-note">4 boxes · or 8 boxes for just SAR 149</span>
             </div>
-            <a href="#order" className="cta-btn">Shop now</a>
+            <div className="hero-ctas">
+              <a href="#order" className="cta-btn">Shop now</a>
+              <a href="https://lin.ee/QXp84HX" target="_blank" rel="noopener noreferrer" className="msg-btn">Message us</a>
+            </div>
             <ul className="hero-points">
               <li>✓ 10 pads in every box</li>
               <li>✓ Free delivery, no prepayment</li>
@@ -156,10 +159,15 @@ export default function Home() {
           </div>
         </section>
 
+        {/* MID CTA (after reviews, like the reference) */}
+        <section className="mid-cta">
+          <a href="#order" className="cta-btn wide">Get free delivery</a>
+        </section>
+
         {/* ORDER */}
         <section className="order" id="order">
-          <h2>Place your order</h2>
-          <p className="order-sub">Fill in your details and tap confirm. We call you to verify, then the courier brings your parcel — pay in cash at your door.</p>
+          <h2>Leave your details</h2>
+          <p className="order-sub">Choose a box, then send your name and phone. Delivery is free.</p>
           <OrderForm />
         </section>
 
@@ -180,8 +188,15 @@ export default function Home() {
         </footer>
       </main>
 
-      {/* Sticky LINE bar (replaces the cash-on-delivery bar) */}
-      <a href="https://lin.ee/QXp84HX" target="_blank" rel="noopener noreferrer" className="sticky-bar line-bar">Chat with us on LINE</a>
+      {/* Sticky bottom bar — red, with Order now + LINE circle (reference style) */}
+      <div className="sticky-bar red-bar">
+        <span className="bar-brand">NoorCare</span>
+        <a href="#order" className="bar-order">Order now</a>
+        <a href="https://lin.ee/QXp84HX" target="_blank" rel="noopener noreferrer" className="bar-line" aria-label="Chat on LINE">LINE</a>
+      </div>
+
+      {/* Floating LINE circle */}
+      <a href="https://lin.ee/QXp84HX" target="_blank" rel="noopener noreferrer" className="line-fab" aria-label="Chat on LINE">LINE</a>
 
       {/* WhatsApp button */}
       <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn" aria-label="Chat on WhatsApp">
