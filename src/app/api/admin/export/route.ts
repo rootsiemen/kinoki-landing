@@ -22,7 +22,7 @@ export async function GET() {
 
   const orders = await listOrders();
   const headers = ["Order #", "Date (UTC)", "Name", "Phone", "City", "Address", "Bundle", "Total (SAR)", "Status", "Notes"];
-  const row = (cells: (string | number)[], tag: string) =>
+  const row = (cells: (string | number)[]) =>
     `<Row>${cells.map((c) => `<Cell><Data ss:Type="${typeof c === "number" ? "Number" : "String"}">${esc(String(c))}</Data></Cell>`).join("")}</Row>`;
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -31,8 +31,8 @@ export async function GET() {
  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
  <Worksheet ss:Name="Orders">
   <Table>
-   ${row(headers, "th")}
-   ${orders.map((o) => row([o.id, o.created_at, o.name, o.phone, o.city, o.address, o.bundle, o.total, o.status, o.notes], "td")).join("\n   ")}
+   ${row(headers)}
+   ${orders.map((o) => row([o.id, o.created_at, o.name, o.phone, o.city, o.address, o.bundle, o.total, o.status, o.notes ?? ""])).join("\n   ")}
   </Table>
  </Worksheet>
 </Workbook>`;
