@@ -26,6 +26,9 @@ export default async function AdminPage() {
       <p className="admin-stats">
         {orders.length} orders · SAR {revenue} total (cash on delivery)
       </p>
+      <p>
+        <a href="/api/admin/export" className="export-btn">⬇ Download orders — Excel file</a>
+      </p>
       {orders.length === 0 ? (
         <p>No orders yet. Orders placed on the landing page will appear here.</p>
       ) : (
