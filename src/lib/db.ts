@@ -9,7 +9,7 @@ function getClient(): Client {
     if (url) {
       client = createClient({ url, authToken: process.env.TURSO_AUTH_TOKEN });
     } else {
-      client = createClient({ url: "file:orders.db" });
+      client = createClient({ url: "file:/tmp/orders.db" });
     }
   }
   return client;
