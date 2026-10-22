@@ -40,6 +40,7 @@ function Stars({ n }: { n: number }) {
 export default function Home() {
   return (
     <>
+      <a href="#order" className="skip-link">Skip to order form</a>
       <div className="topbar">
         <span className="brand">NoorCare Pharmacy</span>
         <span className="topbar-offer">Free delivery · Cash on delivery</span>
@@ -60,7 +61,7 @@ export default function Home() {
               <span className="price-now">SAR 119</span>
               <span className="price-note">4 boxes · or 8 boxes for just SAR 149</span>
             </div>
-            <a href="#order" className="cta-btn">Order Now — Pay on Delivery</a>
+            <a href="#order" className="cta-btn">Shop now</a>
             <ul className="hero-points">
               <li>✓ 10 pads in every box</li>
               <li>✓ Free delivery, no prepayment</li>
@@ -169,8 +170,9 @@ export default function Home() {
             <li>Changed your mind? Message us within 7 days of receiving your parcel and we will arrange a return or exchange.</li>
             <li>The box should be unused and still in its original packing.</li>
             <li>Damaged parcel or wrong contents? We replace it and cover the delivery.</li>
-            <li>Fastest way to reach us is the WhatsApp button on this page.</li>
+            <li>Fastest way to reach us is on LINE — tap the button below and we will reply with the next step.</li>
           </ol>
+          <a href="https://lin.ee/QXp84HX" target="_blank" rel="noopener noreferrer" className="line-btn">Message us on LINE</a>
         </section>
 
         <footer className="site-footer">
@@ -178,8 +180,8 @@ export default function Home() {
         </footer>
       </main>
 
-      {/* Sticky mobile order bar */}
-      <a href="#order" className="sticky-bar">Order Now — from SAR 119 · Pay on Delivery</a>
+      {/* Sticky LINE bar (replaces the cash-on-delivery bar) */}
+      <a href="https://lin.ee/QXp84HX" target="_blank" rel="noopener noreferrer" className="sticky-bar line-bar">Chat with us on LINE</a>
 
       {/* WhatsApp button */}
       <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="wa-btn" aria-label="Chat on WhatsApp">

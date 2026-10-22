@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 const BUNDLES = [
-  { key: "4-boxes", label: "4 boxes", pads: "40 pads", price: 119, tag: "Starter" },
-  { key: "8-boxes", label: "8 boxes", pads: "80 pads", price: 149, tag: "Best value — most ordered" },
+  { key: "4-boxes", label: "Pack of 4 boxes — SAR 119", pads: "40 pads", price: 119, tag: "Pack of 4" },
+  { key: "8-boxes", label: "Pack of 8 boxes — SAR 149", pads: "80 pads", price: 149, tag: "Best value" },
 ];
 
 export default function OrderForm() {
@@ -63,7 +63,6 @@ export default function OrderForm() {
             <span className="bundle-tag">{b.tag}</span>
             <span className="bundle-label">{b.label}</span>
             <span className="bundle-pads">{b.pads}</span>
-            <span className="bundle-price">SAR {b.price}</span>
           </label>
         ))}
       </div>
@@ -100,12 +99,17 @@ export default function OrderForm() {
         onChange={(e) => setForm({ ...form, notes: e.target.value })}
       />
 
+      <div className="order-total-row">
+        <span>Order total</span>
+        <strong>SAR {selected.price.toFixed(2)}</strong>
+      </div>
+
       {error && <p className="form-error">{error}</p>}
 
       <button type="submit" className="order-btn" disabled={busy}>
-        {busy ? "Placing your order…" : `Confirm Order — SAR ${selected.price} · Cash on Delivery`}
+        {busy ? "Placing your order…" : "Confirm placing an order"}
       </button>
-      <p className="form-note">No prepayment. Pay only when the parcel is in your hands.</p>
+      <p className="form-note">Note: We will deliver the parcel to your home. Please watch for it.</p>
     </form>
   );
 }
